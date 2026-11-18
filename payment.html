@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Maison | Payment</title>
+  <link rel="stylesheet" href="restaurtant.css">
+</head>
+<body>
+  <main class="payment-container">
+    <h1>La Maison</h1>
+    <h2>Complete Your Order</h2>
+    <p>Choose your preferred payment method.</p>
+
+    <section class="payment-summary">
+      <h3>Order Summary</h3>
+      <p>Order total: <strong id="paymentTotal">₹0.00</strong></p>
+    </section>
+
+    <form id="paymentForm">
+      <h3>Payment Method</h3>
+
+      <label class="payment-option">
+        <input type="radio" name="paymentMethod"
+               value="COD" checked>
+        Cash on Delivery (COD)
+      </label>
+
+      <label class="payment-option">
+        <input type="radio" name="paymentMethod"
+               value="UPI">
+        UPI (Demo)
+      </label>
+
+      <label class="payment-option">
+        <input type="radio" name="paymentMethod"
+               value="Card">
+        Credit / Debit Card (Demo)
+      </label>
+
+      <label class="payment-option">
+        <input type="radio" name="paymentMethod"
+               value="Net Banking">
+        Net Banking (Demo)
+      </label>
+
+      
+<div id="demoNotice">
+  Select a payment method to continue.
+</div>
+
+<!-- UPI Form -->
+<div id="upiForm" class="payment-details" hidden>
+  <h3>UPI Payment (Demo)</h3>
+
+  <label for="upiId">UPI ID</label>
+  <input
+    type="text"
+    id="upiId"
+    placeholder="example@upi"
+    autocomplete="off"
+  >
+
+  <div class="demo-qr">
+    <p>Demo UPI QR Code</p>
+    <div class="qr-placeholder">UPI</div>
+    <small>Demo only — this is not a scannable payment QR.</small>
+  </div>
+</div>
+
+<!-- Card Form -->
+<div id="cardForm" class="payment-details" hidden>
+  <h3>Credit / Debit Card (Demo)</h3>
+
+  <label for="cardName">Cardholder Name</label>
+  <input
+    type="text"
+    id="cardName"
+    placeholder="Name on card"
+    autocomplete="off"
+  >
+
+  <label for="cardNumber">Card Number</label>
+  <input
+    type="text"
+    id="cardNumber"
+    placeholder="1234 5678 9012 3456"
+    inputmode="numeric"
+    maxlength="19"
+    autocomplete="off"
+  >
+
+  <div class="card-row">
+    <div>
+      <label for="cardExpiry">Expiry Date</label>
+      <input
+        type="text"
+        id="cardExpiry"
+        placeholder="MM/YY"
+        maxlength="5"
+        autocomplete="off"
+      >
+    </div>
+
+    <div>
+      <label for="cardCvv">CVV</label>
+      <input
+        type="password"
+        id="cardCvv"
+        placeholder="123"
+        inputmode="numeric"
+        maxlength="4"
+        autocomplete="off"
+      >
+    </div>
+  </div>
+
+  <small>Use placeholder details only. Do not enter real card information.</small>
+</div>
+
+<!-- Net Banking Form -->
+<div id="netbankingForm" class="payment-details" hidden>
+  <h3>Net Banking (Demo)</h3>
+
+  <label for="bankName">Select Your Bank</label>
+  <select id="bankName">
+    <option value="">Choose a bank</option>
+    <option value="SBI">State Bank of India</option>
+    <option value="HDFC">HDFC Bank</option>
+    <option value="ICICI">ICICI Bank</option>
+    <option value="Axis">Axis Bank</option>
+    <option value="Kotak">Kotak Mahindra Bank</option>
+    <option value="Other">Other Bank</option>
+  </select>
+</div>
+
+
+      <button type="submit" id="payButton">
+        Confirm Demo Order
+      </button>
+
+      <a href="delivery.html">Back to Delivery Details</a>
+    </form>
+
+    <section id="paymentSuccess" hidden>
+      <h2>Order Confirmed!</h2>
+      <p id="confirmationMessage"></p>
+      <p>This is a demo order. No payment was processed.</p>
+      <a href="restaurtant.html">Return to Restaurant</a>
+    </section>
+  </main>
+
+  <script src="payment.js"></script>
+</body>
+</html>

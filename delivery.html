@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delivery Details | La Maison</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 30px 16px;
+      font-family: Arial, sans-serif;
+      background: #f7f3eb;
+      color: #211a14;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      font-family: Georgia, serif;
+      color: #183b2d;
+    }
+
+    .panel {
+      background: white;
+      padding: 24px;
+      margin: 20px 0;
+      border: 1px solid #dfd2bc;
+      border-radius: 14px;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 7px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #c8bba7;
+      border-radius: 7px;
+      font: inherit;
+    }
+
+    .gold-btn {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+      background: #9a7541;
+      color: white;
+      border: 0;
+      border-radius: 7px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .order-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee5d8;
+    }
+
+    .total {
+      margin-top: 18px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .message {
+      color: #183b2d;
+      line-height: 1.6;
+    }
+
+    .back-link {
+      color: #183b2d;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <h1>LA MAISON</h1>
+    <p>Fine Dining · Delivery Details</p>
+
+    <section class="panel">
+      <h2>Your Order</h2>
+      <div id="orderItems"></div>
+      <p class="total" id="orderTotal"></p>
+    </section>
+
+    <section class="panel" id="deliveryPanel">
+      <h2>Delivery Information</h2>
+
+      <form id="deliveryForm">
+        <label for="customerName">Full Name *</label>
+        <input id="customerName" name="customerName"
+          autocomplete="name" required>
+
+        <label for="phone">Contact Number *</label>
+        <input id="phone" name="phone" type="tel"
+          autocomplete="tel" required
+          pattern="[0-9+\-\s]{10,15}"
+          title="Enter a valid contact number">
+
+        <label for="address">House Number and Street Address *</label>
+        <textarea id="address" name="address"
+          autocomplete="street-address" rows="3" required></textarea>
+
+        <label for="city">City *</label>
+        <input id="city" name="city"
+          autocomplete="address-level2" required>
+
+        <label for="pincode">PIN Code *</label>
+        <input id="pincode" name="pincode"
+          autocomplete="postal-code" inputmode="numeric"
+          pattern="[0-9]{6}" maxlength="6" required>
+
+        <label for="instructions">
+          Delivery Instructions (Optional)
+        </label>
+        <textarea id="instructions" name="instructions"
+          rows="2" placeholder="Landmark or other instructions"></textarea>
+
+        <button class="gold-btn" type="submit">
+          Confirm Demo Order
+        </button>
+      </form>
+
+      <p id="deliveryMessage" class="message"></p>
+    </section>
+
+    <a class="back-link" href="restaurtant.html">
+      ← Back to Restaurant Menu
+    </a>
+  </main>
+
+  <script>
+    const savedOrder = localStorage.getItem("laMaisonPendingOrder");
+    const orderItems = document.getElementById("orderItems");
+    const orderTotal = document.getElementById("orderTotal");
+    const deliveryForm = document.getElementById("deliveryForm");
+    const deliveryMessage = document.getElementById("deliveryMessage");
+
+    function money(amount) {
+      return "₹" + Number(amount).toLocaleString("en-IN");
+    }
+
+    if (!savedOrder) {
+      document.getElementById("deliveryPanel").innerHTML =
+        '<h2>No pending order found</h2>' +
+        '<p>Please return to the menu and add items to your order.</p>' +
+        '<a href="restaurtant.html">Back to Menu</a>';
+    } else {
+      const order = JSON.parse(savedOrder);
+
+      orderItems.innerHTML = order.items.map(item => `
+        <div class="order-item">
+          <span>${item.name} × ${item.quantity}</span>
+          <strong>${money(item.price * item.quantity)}</strong>
+        </div>
+      `).join("");
+
+      orderTotal.textContent = "Total: " + money(order.total);
+
+      deliveryForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const details = {
+          name: document.getElementById("customerName").value.trim(),
+          phone: document.getElementById("phone").value.trim(),
+          address: document.getElementById("address").value.trim(),
+          city: document.getElementById("city").value.trim(),
+          pincode: document.getElementById("pincode").value.trim(),
+          instructions: document.getElementById("instructions").value.trim()
+        };
+
+        
+// Save the order and delivery details for the payment page
+const checkoutOrder = {
+  ...order,
+  delivery: details
+};
+
+localStorage.setItem(
+  "laMaisonCheckoutOrder",
+  JSON.stringify(checkoutOrder)
+);
+
+// Open the demo payment page
+window.location.href = "payment.html";
+return;
+
+// Save all confirmed demo orders for the Admin Dashboard
+const savedOrders = JSON.parse(
+  localStorage.getItem("laMaisonOrders") || "[]"
+);
+
+savedOrders.unshift(completedOrder);
+
+localStorage.setItem(
+  "laMaisonOrders",
+  JSON.stringify(savedOrders)
+);
+
+localStorage.removeItem("laMaisonPendingOrder");
+
+        deliveryForm.hidden = true;
+        deliveryMessage.textContent =
+          "Demo order confirmed! Your delivery details have been saved in this browser. No payment has been taken.";
+      });
+    }
+  </script>
+</body>
+</html>

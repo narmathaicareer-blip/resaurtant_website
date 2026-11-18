@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Maison | Fine Dining</title>
+  <link rel="stylesheet" href="restaurtant.css">
+  <script src="restaurtant.js" defer></script>
+
+<a href="about.html">About Us</a>
+
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#home">La Maison <small>FINE DINING</small></a>
+    <button class="mobile-menu" id="mobileMenu">☰</button>
+    <nav id="nav">
+      <a href="restaurtant.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#booking">Reservations</a>
+      <button class="nav-admin" id="openAdmin">Admin</button>
+    </nav>
+    <a class="gold-btn header-order" href="#menu">Order Online 🛒</a>
+  </header>
+
+  <main id="website">
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">Welcome to</p>
+        <h1>La Maison</h1>
+        <p>Good Food <span>•</span> Great Mood <span>•</span> Always</p>
+        <a class="gold-btn" href="#menu">Explore Our Menu →</a>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1100&q=85" alt="Restaurant dining room">
+      <div>
+        <p class="kicker">Our story</p>
+        <h2>Made for moments worth remembering.</h2>
+        <p>Fresh ingredients, thoughtful cooking, and warm hospitality come together at La Maison. Join us for a memorable meal, any day of the week.</p>
+      </div>
+    </section>
+
+<section class="section services-section" id="services">
+  <p class="kicker">The La Maison Experience</p>
+  <h2>Our Services</h2>
+  <p class="section-intro">
+    Great food, thoughtful service, and a welcoming dining experience
+    are at the heart of everything we do.
+  </p>
+
+  <div class="services-grid">
+    <article class="service-card">
+      <span>👨‍🍳</span>
+      <h3>Master Chef Experience</h3>
+      <p>Enjoy carefully prepared dishes inspired by culinary skill,
+      creativity, and a passion for great food.</p>
+    </article>
+
+    <article class="service-card">
+      <span>🥗</span>
+      <h3>Quality Food</h3>
+      <p>We focus on ingredient quality, freshness, balanced flavours,
+      and careful preparation.</p>
+    </article>
+
+    <article class="service-card">
+      <span>🛵</span>
+      <h3>Online Ordering</h3>
+      <p>Browse our menu, add your favourites to the cart, and place
+      a convenient demo order online.</p>
+    </article>
+
+    <article class="service-card">
+      <span>🕒</span>
+      <h3>Service When You Need It</h3>
+      <p>Explore our menu and booking options online at any time.
+      Restaurant service hours may vary.</p>
+    </article>
+
+    <article class="service-card">
+      <span>⭐</span>
+      <h3>Skilled Chefs</h3>
+      <p>Our chef-focused approach combines thoughtful preparation,
+      consistency, and attention to detail.</p>
+    </article>
+
+    <article class="service-card">
+      <span>✨</span>
+      <h3>Clean and Organized Space</h3>
+      <p>We aim to provide a comfortable, tidy, and welcoming
+      dining environment.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="popularDishes">
+  <p class="kicker">Customer Favourites</p>
+  <h2>Popular Dishes</h2>
+  <p class="section-intro">
+    Discover some of the dishes featured in our menu.
+  </p>
+
+  <div class="services-grid">
+    <article class="service-card">
+      <img
+        src=https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=700&q=85
+        alt="Biryani"
+        loading="lazy"
+        style="width:100%;height:190px;object-fit:cover;border-radius:10px"
+      >
+      <h3>Chicken Biryani</h3>
+      <p class="dish-rating">★ 4.7 / 5</p>
+      <p>Demo price: ₹299</p>
+      <p>Prepared with seasoned rice, spices, herbs, and chicken,
+      then cooked together for a rich aroma.</p>
+    </article>
+
+    <article class="service-card">
+      <img
+        src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=85"
+        alt="Burger"
+        loading="lazy"
+        style="width:100%;height:190px;object-fit:cover;border-radius:10px"
+      >
+      <h3>Classic Burger</h3>
+      <p class="dish-rating">★ 4.5 / 5</p>
+      <p>Demo price: ₹199</p>
+      <p>Assembled with a toasted bun, a cooked patty, fresh toppings,
+      and sauce.</p>
+    </article>
+
+    <article class="service-card">
+      <img
+        src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=85"
+        alt="Fresh salad"
+        loading="lazy"
+        style="width:100%;height:190px;object-fit:cover;border-radius:10px"
+      >
+      <h3>Garden Fresh Salad</h3>
+      <p class="dish-rating">★ 4.6 / 5</p>
+      <p>Demo price: ₹179</p>
+      <p>Prepared with fresh vegetables and a light dressing.</p>
+    </article>
+  </div>
+</section>
+
+
+
+    <section class="menu-section section" id="menu">
+      <div class="section-title">
+        <p class="kicker">From our kitchen</p>
+        <h2>Our Menu</h2>
+        <p>Seasonal ingredients. Beautifully simple. Always delicious.</p>
+      </div>
+
+      
+
+<div class="filters">
+
+<div class="menu-search">
+  <input
+    type="search"
+    id="menuSearch"
+    placeholder="Search for a dish..."
+    aria-label="Search menu dishes"
+  >
+  <button type="button" id="menuSearchBtn" class="gold-btn">
+    Search
+  </button>
+  <button type="button" id="clearMenuSearch" class="outline-btn">
+    Clear
+  </button>
+</div>
+<p id="menuSearchMessage" aria-live="polite"></p>
+
+  <button class="filter active" data-filter="All">All</button>
+  <button class="filter" data-filter="Gravies">Gravies</button>
+  <button class="filter" data-filter="Biryani">Biryani</button>
+  <button class="filter" data-filter="Fried Rice">Fried Rice</button>
+  <button class="filter" data-filter="Fast Foods">Fast Foods</button>
+  <button class="filter" data-filter="Starters">Starters</button>
+  <button class="filter" data-filter="Main Course">Main Course</button>
+  <button class="filter" data-filter="Rice and Noodles">Rice and Noodles</button>
+  <button class="filter" data-filter="Salads">Salads</button>
+  <button class="filter" data-filter="Desserts">Desserts</button>
+  <button class="filter" data-filter="Drinks">Drinks</button>
+</div>
+
+
+
+      <div class="food-grid" id="foodGrid"></div>
+
+      <div class="cart-summary">
+  <span id="cartStatus">Your cart is empty.</span>
+  <button class="gold-btn" id="showCart" type="button">
+    View Order (<span id="cartCount">0</span>)
+  </button>
+</div>
+
+
+    </section>
+
+    <section class="booking section" id="booking">
+      <div>
+        <p class="kicker">Your table awaits</p>
+        <h2>Reserve a Table</h2>
+        <p>Make time for good food and great company.</p>
+      </div>
+
+      <form id="bookingForm" class="booking-form">
+        <label>Name
+          <input name="name" required placeholder="Your name">
+        </label>
+        <label>Email
+          <input name="email" type="email" required placeholder="you@example.com">
+        </label>
+        <label>Date
+          <input name="date" id="bookingDate" type="date" required>
+        </label>
+        <label>Time
+          <select name="time" required>
+            <option value="">Choose a time</option>
+            <option>12:00 PM</option>
+            <option>1:00 PM</option>
+            <option>6:00 PM</option>
+            <option>7:00 PM</option>
+            <option>8:00 PM</option>
+            <option>9:00 PM</option>
+          </select>
+        </label>
+        <label>Guests
+          <select name="guests">
+            <option>1</option>
+            <option selected>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+          </select>
+        </label>
+        <button class="dark-btn" type="submit">Request Booking →</button>
+      </form>
+
+      <p id="bookingMessage" class="message"></p>
+    </section>
+
+    
+<!-- FOOTER -->
+<footer class="about-footer">
+
+  <div class="footer-container">
+
+    <!-- About Restaurant -->
+    <div class="footer-column footer-about">
+      <a href="restaurtant.html" class="footer-logo">
+        <span>✦</span> LA MAISON
+      </a>
+      <p class="footer-tagline">FINE DINING</p>
+
+      <p>
+        Welcome to La Maison, where delicious flavours, fresh
+        ingredients, and warm hospitality come together. We are
+        passionate about serving memorable meals and creating
+        wonderful dining experiences for every guest.
+      </p>
+
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">◎</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <div class="footer-line"></div>
+
+      <a href="restaurtant.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="restaurtant.html#menu">Our Menu</a>
+      <a href="restaurtant.html#contact">Contact</a>
+      <a href="restaurtant.html#booking">Book a Table</a>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <div class="footer-line"></div>
+
+      <p>📍 Chennai, Tamil Nadu, India</p>
+      <p>☎ +91 88707 12543</p>
+      <p>✉ hello@lamaison.example</p>
+    </div>
+
+    <!-- Opening Hours -->
+    <div class="footer-column">
+      <h3>Opening Hours</h3>
+      <div class="footer-line"></div>
+
+      <div class="footer-hours">
+        <span>Monday – Friday</span>
+        <span>9:00 AM – 10:00 PM</span>
+      </div>
+
+      <div class="footer-hours">
+        <span>Saturday</span>
+        <span>9:00 AM – 10:00 PM</span>
+      </div>
+
+      <div class="footer-hours">
+        <span>Sunday</span>
+        <span>9:00 AM – 10:00 PM</span>
+      </div>
+
+      <a href="restaurtant.html#booking" class="footer-book-btn">
+        Reserve Your Table →
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>© 2026 La Maison | Fine Dining. All rights reserved.</p>
+    <p>Made with ♥ for food lovers</p>
+  </div>
+
+</footer>
+
+
+<!-- SHOPPING CART -->
+<dialog id="cartDialog" class="cart-dialog">
+  <div class="dialog-head">
+    <h2>Your Order</h2>
+    <button id="closeCart" class="x-btn" type="button">×</button>
+  </div>
+
+  <div id="cartItems"></div>
+
+  <div class="total">
+    <span>Total</span>
+    <strong id="cartTotal">₹0</strong>
+  </div>
+
+  <p class="note">Demo only: no payment is processed.</p>
+
+  <button id="placeOrder" class="gold-btn full" type="button">
+    Place Demo Order
+  </button>
+
+  <p id="orderMessage" class="message"></p>
+</dialog>
+
+<!-- ADMIN DASHBOARD -->
+<section id="adminPage" class="admin-page hidden">
+  <header class="admin-top">
+    <div>
+      <p class="kicker">LA MAISON</p>
+      <h1>Admin Dashboard</h1>
+    </div>
+    <button type="button" class="outline-btn" id="closeAdmin">
+      ← Back to Website
+    </button>
+  </header>
+
+  <div id="adminLogin" class="login-card">
+    <h2>Administrator Login</h2>
+    <p>Sign in to manage your restaurant.</p>
+
+    <form id="loginForm">
+      <label>Username
+        <input id="adminUsername" required placeholder="admin">
+      </label>
+
+      <label>Password
+        <input id="adminPassword" type="password" required placeholder="Password">
+      </label>
+
+      <button type="submit" class="gold-btn full">Sign In</button>
+      <p id="loginMessage" class="message error"></p>
+    </form>
+
+    <small>Demo login: <b>admin</b> / <b>admin123</b></small>
+  </div>
+
+  <div id="adminContent" class="hidden">
+    <h2>Restaurant Management</h2>
+
+    <div class="stats">
+      <article><span>Menu Items</span><strong id="statMenu">0</strong></article>
+      <article><span>Orders</span><strong id="statOrders">0</strong></article>
+      <article><span>Reservations</span><strong id="statBookings">0</strong></article>
+      <article><span>Order Sales</span><strong id="statSales">₹0</strong></article>
+    </div>
+
+    <div class="admin-columns">
+      <section class="admin-card">
+        <h2>Menu Items</h2>
+        
+<form id="addMenuForm" class="admin-menu-form">
+  <h3>Add New Menu Item</h3>
+
+  <label>Dish Name
+    <input name="name" required placeholder="Enter dish name">
+  </label>
+
+  <label>Price (₹)
+    <input name="price" type="number" min="1" required placeholder="Enter price">
+  </label>
+
+  <label>Category
+    <select name="category" required>
+      <option value="">Choose category</option>
+      <option>Gravies</option>
+      <option>Biryani</option>
+      <option>Fried Rice</option>
+      <option>Fast Foods</option>
+      <option>Starters</option>
+      <option>Main Course</option>
+      <option>Rice and Noodles</option>
+      <option>Salads</option>
+      <option>Desserts</option>
+      <option>Drinks</option>
+    </select>
+  </label>
+
+  <label>Image URL (optional)
+    <input name="image" type="url" placeholder="https://example.com/dish.jpg">
+  </label>
+
+  <label>Description
+    <textarea name="description" required placeholder="Describe the dish"></textarea>
+  </label>
+
+  <button type="submit" class="gold-btn">Add Menu Item</button>
+  <p id="menuFormMessage"></p>
+</form>
+
+<div id="adminMenuList" class="admin-list"></div>
+
+      </section>
+
+      <section class="admin-card">
+        <h2>Customer Orders</h2>
+        <div id="adminOrders" class="admin-list"></div>
+
+        <h2>Reservations</h2>
+        <div id="adminBookings" class="admin-list"></div>
+      </section>
+    </div>
+
+    <button type="button" id="logout" class="outline-btn">Log Out</button>
+  </div>
+</section>
+
+<!-- ADMIN DASHBOARD -->
+<section id="adminPage" class="admin-page hidden">
+  <header class="admin-top">
+    <div>
+      <p>LA MAISON · ADMIN</p>
+      <h1>Admin Dashboard</h1>
+    </div>
+    <button type="button" id="closeAdmin" class="outline-btn">
+      ← Back to Website
+    </button>
+  </header>
+
+  <div id="adminLogin" class="login-card">
+    <h2>Administrator Login</h2>
+    <form id="loginForm">
+      <label>Username
+        <input id="adminUsername" required placeholder="admin">
+      </label>
+      <label>Password
+        <input id="adminPassword" type="password" required placeholder="Password">
+      </label>
+      <button type="submit" class="gold-btn full">Sign In</button>
+      <p id="loginMessage"></p>
+    </form>
+    <p>Demo login: <b>admin</b> / <b>admin123</b></p>
+  </div>
+
+  <div id="adminContent" class="hidden">
+    <h2>Welcome to your dashboard!</h2>
+    <p>You are logged in to the demo admin page.</p>
+    <button type="button" id="logout" class="outline-btn">Log Out</button>
+  </div>
+</section>
+
+
+  
+
+
+
+
+</body>
+</html>
